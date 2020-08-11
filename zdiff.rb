@@ -15,6 +15,7 @@ def gather_roles_indexes(conn)
                     'identity:roles:reviewer', 'identity:roles:app:admin',
                     'identity:roles:app:assistant', 'identity:roles:end:user'],
                    aggregate: 'min'
+  conn.expire dest, 60
   dest
 end
 
